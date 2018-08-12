@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4399203707897890}
   - component: {fileID: 212554435074840050}
-  - component: {fileID: 114393158991020566}
   - component: {fileID: 50106875396575188}
   - component: {fileID: 58010317184126892}
+  - component: {fileID: 114393158991020566}
   m_Layer: 0
   m_Name: largeAsteroid
   m_TagString: Enemy

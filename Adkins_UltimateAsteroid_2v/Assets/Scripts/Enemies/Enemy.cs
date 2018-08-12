@@ -61,7 +61,7 @@ public class Enemy : EnemyPawn {
             Destroy(gameObject);
 
             // Player loses a life
-            GameManager.pHealth.currentHealth -= playerHealthHit;
+            GameManager.instance.currentHealth -= playerHealthHit;
         }
     }
 

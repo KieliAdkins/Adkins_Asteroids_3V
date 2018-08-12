@@ -8,9 +8,13 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
     public static Score playerScore;
     public static PlayerHealth pHealth;
+
     public List<GameObject> enemyList = new List<GameObject>();
     public int numEnemySpawned;
     public int numToSpawn;
+
+    public int startingHealth = 100;
+    public int currentHealth;
 
     internal Quaternion rotation;
     public GameObject target;

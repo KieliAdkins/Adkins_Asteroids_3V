@@ -16,6 +16,13 @@ public class Asteroids : MonoBehaviour {
     void Start () {
         // Getting component movement for the asteroid
         tf = GetComponent<Transform>();
+
+        // Declaring our asteroids movement
+        if (GameManager.instance.target != null && tf != null)
+        {
+            float step = moveSpeed * Time.deltaTime;
+            tf.position = Vector3.MoveTowards(tf.position, GameManager.instance.target.transform.position, step);
+        }
     }
 	
 	// Update is called once per frame
@@ -49,10 +56,10 @@ public class Asteroids : MonoBehaviour {
             Destroy(gameObject);
 
             // Player loses a life
-            GameManager.pHealth.currentHealth -= playerHealthHit;
+            GameManager.instance.currentHealth -= playerHealthHit;
         }
     }
-
+    
     // On destroy function
     private void OnDestroy()
     {

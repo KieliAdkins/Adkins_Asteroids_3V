@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
 
     // Health information
-    public int startingHealth = 100;
-    public int currentHealth;
     public Slider healthSlider;
 
     // Use this for initialization
@@ -17,19 +15,19 @@ public class PlayerHealth : MonoBehaviour {
         GameManager.pHealth = this; 
 
         // Set the initial health of the player.
-        currentHealth = startingHealth;
+        GameManager.instance.currentHealth = GameManager.instance.startingHealth;
 
         // Setting the health slider value
-        healthSlider.value = startingHealth;
+        healthSlider.value = GameManager.instance.startingHealth;
     }
 	
 	// Update is called once per frame
 	void Update () {
         // Setting the health slider value
-        healthSlider.value = currentHealth;
+        healthSlider.value = GameManager.instance.currentHealth;
 
         // If player has no health 
-        if (currentHealth == 0)
+        if (GameManager.instance.currentHealth == 0)
         {
             // Loading player to lose screen
             SceneManager.LoadScene(1);

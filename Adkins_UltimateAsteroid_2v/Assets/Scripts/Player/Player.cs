@@ -40,11 +40,8 @@ public class Player : PlayerPawn
 
     void OnDestroy()
     {
-        // Moving player back to the center of the game
-        // Instantiate(starship.laser, starship.laserSpawn.position, starship.laserSpawn.rotation);
-
         // Player loses a life
-        GameManager.pHealth.currentHealth -= 25;
+        GameManager.instance.currentHealth -= 25;
     }
 
 }
